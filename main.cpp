@@ -31,13 +31,13 @@ int main()
 	compteDeAlain += 100; // le compte de banque doit être augmenter du montant recu 
 
 	CompteBanque compteDeJosee(6500);
-	compteDeJosee += transfert;
-	compteDeAlain -= transfert;
+	compteDeJosee += transfert; // ajout le montant du transfert dans du solde du compte de Josée
+	compteDeAlain -= transfert;  // enleve le montant du transfert du solde du compte de Alain
 
 	cout << "Compte de Alain: " << compteDeAlain.getSolde() << "$" << endl;
 	cout << "Compte de Josée: " << compteDeJosee.getSolde() << "$" << endl;
 
-	if (compteDeJosee < compteDeAlain) {
+	if (compteDeJosee < compteDeAlain) {  // compare le solde du compte de Josee à celui de Alain
 		cout << "Alain est le plus riche!" << endl;
 	}
 	else {
@@ -45,9 +45,9 @@ int main()
 	}
 
 	// finalement, Josée et Alain tombe en amour et décide d'unir leur compte de banque.
-	CompteBanque compteConjoint = compteDeAlain + compteDeJosee;
-	compteDeAlain = 0;
-	compteDeJosee = 0;
+	CompteBanque compteConjoint = compteDeAlain + compteDeJosee;  // crée un nouveau compte de banque dont le solde est la somme du solde des comptes de Josee et Alain
+	compteDeAlain = 0; // met le solde du compte de Alain à 0
+	compteDeJosee = 0;  // met le solde du compte de Josee à 0
 
 	cout << "Le compte conjoint a un solde de " << compteConjoint.getSolde() << "$" << endl;
 
